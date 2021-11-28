@@ -1,10 +1,8 @@
 # Errors
 
 <aside class="notice">
-This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
+Error page still not updated. 
 </aside>
-
-The Kittn API uses the following error codes:
 
 
 Error Code | Meaning
@@ -20,3 +18,48 @@ Error Code | Meaning
 429 | Too Many Requests -- You're requesting too many kittens! Slow down!
 500 | Internal Server Error -- We had a problem with our server. Try again later.
 503 | Service Unavailable -- We're temporarily offline for maintenance. Please try again later.
+
+### You can add your own ERROR code to bin/functMapFunc2Code.sh file and call from functions.
+
+```shell
+mapERRORFunction2Code () {
+        funcName=$1
+        case "$funcName" in 
+                mine)
+                                code=500
+                                ;;
+                mineGenesis)
+                                code=501
+                                ;;
+                checkAccountBal)
+                                code=510
+                                ;;
+                getTransactionMessageForSign)
+                                code=511
+                                ;;
+                pushSignedMessageToPending)
+                                code=512
+                                ;;
+                AddBlockFromNetwork)
+                                code=520
+                                ;;
+                listNewBlock)
+                                code=521
+                                ;;
+                provideBlocks)
+                                code=522
+                                ;;
+                validateNetworkBlockHash)
+                                code=523
+                                ;;
+                updateNetworkInfo)
+                                code=401
+                                ;;
+                *)
+                                code=000
+                                ;;
+        esac
+        echo $code
+}
+
+```
