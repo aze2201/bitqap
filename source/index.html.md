@@ -118,6 +118,7 @@ cd bin
 
 ```python
 python wsdump.py ws://127.0.0.1:8001
+> {"command":"mine","appType":"miner","messageType":"direct"}
 ```
 
 
