@@ -7,8 +7,8 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - javascript
 
 toc_footers:
-  - <a href='#'>You need to generate Public-Private Key pair</a>
-  - <a href='https://github.com/slatedocs/slate'>Documentation Powered by aze2201</a>
+  - <a href='#'>You need to generate Public-Private Key pair</a><br>
+  - <a href='https://github.com/aze2201/bashCoin'>Github</a>
 
 includes:
   - errors
@@ -213,3 +213,5 @@ ACCTNUM| sha256 hash of Pub key | mandatory
 
 
 ## send coin
+
+
