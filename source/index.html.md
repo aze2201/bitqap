@@ -29,6 +29,11 @@ Welcome to the bitqap project! You can use our bitqap interfaces to access endpo
 We have language bindings in Shell, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
 
 
+# Topology
+![Alt text](https://github.com/aze2201/bashCoin/blob/main/doc/img/TopologyBashCoin_v1.png?raw=true)
+
+# Mining steps
+![Alt text](https://github.com/aze2201/bashCoin/blob/main/doc/img/p2pCropped.gif?raw=true)
 
 # Authentication
 
@@ -38,7 +43,6 @@ We have language bindings in Shell, Python, and JavaScript! You can view code ex
 ```shell
 # csr creted for mining node to accept encrypyed connections only over HTTPS
 openssl genrsa -aes128 -out username_private.pem 1024
-...
 openssl genrsa  -out user.key 2048
 openssl req -key user.key -new -out user.csr
 openssl rsa -in user.key  -pubout > user.pub
@@ -82,7 +86,7 @@ not defined yet
 not defined yet
 ```
 
-> The above command returns JSON structured like this:
+> The above command returns TXT structured like this:
 
 ```shell
 497cea9f5af23c76922d7bfc6237d8e225248887defcc333f36ba853a1266848
@@ -91,11 +95,8 @@ not defined yet
 Your account is SHA256 of public key. In future other accounts will use this info to coins. 
 You can provide this account as URL or QR code 
 
-### WS Request
+### no WS Request
 
-`webSocket = new WebSocket(url, protocols);
-webSocket.send("Here's some text that the server is urgently awaiting!");
-`
 
 ### message parameters
 
@@ -209,3 +210,6 @@ command | checkbalance |  mandatory
 messageType| direct/broadcast | mandatory
 ACCTNUM| sha256 hash of Pub key | mandatory
 
+
+
+## send coin
