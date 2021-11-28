@@ -318,6 +318,12 @@
             <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
           </li>
           <li>
+            <a href="#topology" class="toc-h1 toc-link" data-title="Topology">Topology</a>
+          </li>
+          <li>
+            <a href="#mining-steps" class="toc-h1 toc-link" data-title="Mining steps">Mining steps</a>
+          </li>
+          <li>
             <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
           </li>
           <li>
@@ -331,6 +337,9 @@
                   </li>
                   <li>
                     <a href="#check-balance" class="toc-h2 toc-link" data-title="check balance">check balance</a>
+                  </li>
+                  <li>
+                    <a href="#send-coin" class="toc-h2 toc-link" data-title="send coin">send coin</a>
                   </li>
               </ul>
           </li>
@@ -350,13 +359,16 @@
 <p>Welcome to the bitqap project! You can use our bitqap interfaces to access endpoints.</p>
 
 <p>We have language bindings in Shell, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
+<h1 id='topology'>Topology</h1>
+<p><img src="https://github.com/aze2201/bashCoin/blob/main/doc/img/TopologyBashCoin_v1.png?raw=true" alt="Alt text" /></p>
+<h1 id='mining-steps'>Mining steps</h1>
+<p><img src="https://github.com/aze2201/bashCoin/blob/main/doc/img/p2pCropped.gif?raw=true" alt="Alt text" /></p>
 <h1 id='authentication'>Authentication</h1>
 <blockquote>
 <p>To generate Private/Public Key pair use this shell code:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># csr creted for mining node to accept encrypyed connections only over HTTPS</span>
 openssl genrsa <span class="nt">-aes128</span> <span class="nt">-out</span> username_private.pem 1024
-...
 openssl genrsa  <span class="nt">-out</span> user.key 2048
 openssl req <span class="nt">-key</span> user.key <span class="nt">-new</span> <span class="nt">-out</span> user.csr
 openssl rsa <span class="nt">-in</span> user.key  <span class="nt">-pubout</span> <span class="o">&gt;</span> user.pub
@@ -382,17 +394,13 @@ You must generate private/public key on your device and secure it.
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="nx">not</span> <span class="nx">defined</span> <span class="nx">yet</span>
 </code></pre></div>
 <blockquote>
-<p>The above command returns JSON structured like this:</p>
+<p>The above command returns TXT structured like this:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight shell tab-shell"><code>497cea9f5af23c76922d7bfc6237d8e225248887defcc333f36ba853a1266848
 </code></pre></div>
 <p>Your account is SHA256 of public key. In future other accounts will use this info to coins. 
 You can provide this account as URL or QR code </p>
-<h3 id='ws-request'>WS Request</h3>
-<p><code>webSocket = new WebSocket(url, protocols);
-webSocket.send(&quot;Here&#39;s some text that the server is urgently awaiting!&quot;);
-</code></p>
-<h3 id='message-parameters'>message parameters</h3>
+<h3 id='no-ws-request'>no WS Request</h3><h3 id='message-parameters'>message parameters</h3>
 <table><thead>
 <tr>
 <th>key</th>
@@ -433,7 +441,7 @@ Remember — keep your private key secret
 <p>Mine will insert the top transactions from the queue with the 100 highest into the next block and start calculating.</p>
 
 <aside class="warning">mine command can be sent only from localhost.</aside>
-<h3 id='ws-request-2'>WS Request</h3>
+<h3 id='ws-request'>WS Request</h3>
 <p><code>webSocket = new WebSocket(url, protocols);
 webSocket.send(&quot;Here&#39;s some text that the server is urgently awaiting!&quot;);
 </code></p>
@@ -484,7 +492,7 @@ webSocket.send(&quot;Here&#39;s some text that the server is urgently awaiting!&
     </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
 <p>This function will use UTXO method to calculate balance.</p>
-<h3 id='ws-request-3'>WS Request</h3>
+<h3 id='ws-request-2'>WS Request</h3>
 <p><code>webSocket = new WebSocket(url, protocols);
 webSocket.send(&quot;Here&#39;s some text that the server is urgently awaiting!&quot;);
 </code></p>
@@ -512,7 +520,7 @@ webSocket.send(&quot;Here&#39;s some text that the server is urgently awaiting!&
 <td>mandatory</td>
 </tr>
 </tbody></table>
-<h1 id='errors'>Errors</h1>
+<h2 id='send-coin'>send coin</h2><h1 id='errors'>Errors</h1>
 <aside class="notice">
 This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
 </aside>
