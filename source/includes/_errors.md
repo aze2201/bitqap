@@ -19,7 +19,7 @@ Error Code | Meaning
 500 | Internal Server Error -- We had a problem with our server. Try again later.
 503 | Service Unavailable -- We're temporarily offline for maintenance. Please try again later.
 
-You can add your own ERROR code to @bin/functMapFunc2Code.sh@ file and call from functions.
+You can add your own ERROR code to **bin/functMapFunc2Code.sh** file and call from functions.
 
 ```shell
 mapERRORFunction2Code () {
